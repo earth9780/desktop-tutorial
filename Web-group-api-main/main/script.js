@@ -5,10 +5,9 @@ const countryInput = document.getElementById("countryInput");
 const searchBtn = document.getElementById("searchBtn");
 const regionSelect = document.getElementById("regionSelect");
 
-document.getElementById("memberBtn").addEventListener("click", function() {
+document.getElementById("memberBtn").addEventListener("click", function () {
   window.location.href = "member.html";
 });
-
 
 const regionBackgrounds = {
   Africa: "gif/afrising.gif",
@@ -132,6 +131,14 @@ function playCountrySong(country) {
     audio.play();
   }
 }
+const volumeRange = document.getElementById("volumeRange");
+const audio = document.getElementById("backgroundAudio");
+
+// Event listener for volume range input
+volumeRange.addEventListener("input", function () {
+  const volume = parseFloat(volumeRange.value) / 100;
+  audio.volume = volume;
+});
 // Initial country fetch examples
 getCountry("thailand");
 getCountry("japan");
